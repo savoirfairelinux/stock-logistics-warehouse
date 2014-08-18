@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<openerp>
+  <data>
+    <record id="view_picking_internal_search" model="ir.ui.view">
+      <field name="name">stock.picking.internal.search</field>
+      <field name="model">stock.picking</field>
+      <field name="inherit_id" ref="stock.view_picking_internal_search" />
+      <field name="arch" type="xml">
+        <xpath expr="//group[@string='Group By...']" position="inside">
+          <filter string="Partner" domain="[]" context="{'group_by': 'partner_id'}" />
+        </xpath>
+      </field>
+    </record>
+
+    <record id="view_picking_out_search" model="ir.ui.view">
+      <field name="name">stock.picking.out.search</field>
+      <field name="model">stock.picking.out</field>
+      <field name="inherit_id" ref="stock.view_picking_out_search" />
+      <field name="arch" type="xml">
+        <xpath expr="//group[@string='Group By...']" position="inside">
+          <filter string="Partner" domain="[]" context="{'group_by': 'partner_id'}" />
+        </xpath>
+      </field>
+    </record>
+
+    <record id="view_picking_in_search" model="ir.ui.view">
+      <field name="name">stock.picking.in.search</field>
+      <field name="model">stock.picking.in</field>
+      <field name="inherit_id" ref="stock.view_picking_in_search" />
+      <field name="arch" type="xml">
+        <xpath expr="//group[@string='Group By...']" position="inside">
+          <filter string="Partner" domain="[]" context="{'group_by': 'partner_id'}" />
+        </xpath>
+      </field>
+    </record>
+
+  </data>
+</openerp>
+
