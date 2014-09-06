@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<openerp>
+  <data>
+    <record id="view_picking__internal_rank_search" model="ir.ui.view">
+      <field name="name">stock.picking.internal.rank.search</field>
+      <field name="model">stock.picking</field>
+      <field name="inherit_id" ref="stock.view_picking_internal_search" />
+      <field name="arch" type="xml">
+        <xpath expr="//group[@string='Group By...']" position="inside">
+          <filter string="Rank" domain="[]" context="{'group_by': 'rank_id'}" />
+        </xpath>
+      </field>
+    </record>
+
+    <record id="view_picking_out_rank_search" model="ir.ui.view">
+      <field name="name">stock.picking.out.rank.search</field>
+      <field name="model">stock.picking.out</field>
+      <field name="inherit_id" ref="stock.view_picking_out_search" />
+      <field name="arch" type="xml">
+        <xpath expr="//group[@string='Group By...']" position="inside">
+          <filter string="Rank" domain="[]" context="{'group_by': 'rank_id'}" />
+        </xpath>
+      </field>
+    </record>
+
+    <record id="view_picking_in_search_rank" model="ir.ui.view">
+      <field name="name">stock.picking.in.search.rank</field>
+      <field name="model">stock.picking.in</field>
+      <field name="inherit_id" ref="stock.view_picking_in_search" />
+      <field name="arch" type="xml">
+        <xpath expr="//group[@string='Group By...']" position="inside">
+          <filter string="Rank" domain="[]" context="{'group_by': 'rank_id'}" />
+        </xpath>
+      </field>
+    </record>
+
+  </data>
+</openerp>
+
